@@ -5,12 +5,12 @@ inotifywait -m /watched -e create -e moved_to |
         echo "The file '$file' appeared in directory '$path' via '$action'"
 	if [[ $file == *.mkv ]] || [[ $file == *.avi ]]
 	   then
-  	       inotifywait "$file" -e close | 
+  	       inotifywait "/watched/""$file" -e close | 
                while read ; do 
                   echo "file finished copying to directory"
   	          destinationFileName="${file%.*}.mp4"; 
-	          eval "HandBrakeCLI -i '"$file"' -o "/destination/"'"$destinationFileName"' --preset="Universal""
-	          rm "$file"
+	          eval "HandBrakeCLI -i "/watched/"'"$file"' -o "/destination/"'"$destinationFileName"' --preset="Universal""
+	          rm "/watched/""$file"
                done  
 	fi
     done
