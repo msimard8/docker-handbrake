@@ -9,5 +9,6 @@ inotifywait -m /watched -e create -e moved_to |
   	          destinationFileName="${file%.*}.mp4"; 
 	          eval "HandBrakeCLI -i "/watched/"'"$file"' -o "/destination/"'"$destinationFileName"' --preset="Universal""
 	          rm "$path""$file"
+               done  
 	fi
     done
