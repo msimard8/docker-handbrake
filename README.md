@@ -4,6 +4,16 @@ It is kind of designed for my personal use, but I am willing to make it better i
 
 Pretty simple for now. 
 
-1)place files in directory named watched
+
+1)place files in directory named watched 
+
 2)encoding will automagically start and be placed in
+
 3) original file gets deleted
+
+
+Example:
+
+docker run -v /path/to/watched/folder:/watched -v /path/to/destination/folder:/destination msimard8/docker-handbrake
+
+
