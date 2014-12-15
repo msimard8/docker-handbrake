@@ -5,8 +5,7 @@ RUN apt-get update -qq
 RUN apt-get install -y software-properties-common python-software-properties 
 RUN apt-add-repository -y ppa:stebbins/handbrake-snapshots
 RUN apt-get update -qq
-RUN apt-get install -y handbrake-cli
-RUN apt-get install -y inotify-tools
+RUN apt-get install -y handbrake-cli inotify-tools lsof
 
 VOLUME ["/destination"]
 VOLUME ["/watched"]
